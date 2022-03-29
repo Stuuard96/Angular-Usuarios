@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup; 
-
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar) { 
+  form: FormGroup;
+  loading=false; 
+  
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private route: Router) { 
     this.form=this.fb.group({
       user: ['', Validators.required],
-      pass: ['', Validators.required]
+      password: ['', Validators.required]
     });
   }
 
@@ -21,20 +23,32 @@ export class LoginComponent implements OnInit {
   }
 
   logIn(){
+    console.log(this.form);
     const user=this.form.value.user;
-    const pass=this.form.value.pass;
-    if(user=="admin" && pass=='123'){
+    const password=this.form.value.password;
+    if(user=="admin" && password=='123'){
       //Redireccionamos al dashboard
+      this.fakeLoading();
     }else{
       //Mostramos mensaje de error
       this.errorLogIn();
+      this.form.reset();
     }
   }
+  
   errorLogIn(){
     this._snackBar.open('User or Password invalid. Try again!', 'Close',{
-      duration: 5000,
+      duration: 4000,
       horizontalPosition: 'center',
       verticalPosition: 'top'
     });
+  }
+
+  fakeLoading(){
+    this.loading=true;
+    setTimeout(() => {
+      //Redireccionamos al dashboard
+      this.route.navigate(['dashboard']);
+    }, 1500);
   }
 }

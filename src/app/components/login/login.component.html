@@ -1,21 +1,22 @@
 <div class="body">
-  <form [formGroup]="form" (ngSubmit)="logIn()">
+  <mat-spinner *ngIf="loading" diameter="60"></mat-spinner>
+  <form [formGroup]="form" *ngIf="!loading" (ngSubmit)="logIn()">
     <div class="body__figure">
       <img src="./assets/img/programmer.png" alt="" width="50%" />
       <h1>Log In</h1>
     </div>
     <div class="body__form">
-      <mat-form-field class="body__form--item" appearance="fill">
+      <mat-form-field class="body__form--item" appearance="outline">
         <mat-label>User</mat-label>
-        <input matInput autocomplete="off" formControlName="user" />
+        <input matInput type="text" autocomplete="off" formControlName="user" />
       </mat-form-field>
-      <mat-form-field class="body__form--item" appearance="fill">
+      <mat-form-field class="body__form--item" appearance="outline">
         <mat-label class="label">Pass</mat-label>
         <input
           matInput
           type="password"
           autocomplete="off"
-          formControlName="pass"
+          formControlName="password"
         />
       </mat-form-field>
       <button
