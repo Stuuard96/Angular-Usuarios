@@ -1,14 +1,5 @@
 <mat-toolbar class="mat-medium-tall" color="primary">
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <a routerLink="/dashboard"
-    ><img class="logo" src="./assets/img/logo.svg" alt="Company Logo"
-  /></a>
+  <span routerLink="/dashboard" id="logo__title">AppUsuarios</span>
   <span class="example-spacer"></span>
   <button mat-button *ngFor="let item of menu" [routerLink]="item.redirect">
     {{ item.nombre }}

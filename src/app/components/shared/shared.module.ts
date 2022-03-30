@@ -17,6 +17,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import { FormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator'; 
+import {MatSortModule} from '@angular/material/sort'; 
 
 @NgModule({
   declarations: [],
@@ -35,6 +39,10 @@ import { FormsModule} from '@angular/forms';
     MatCheckboxModule,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   exports:[
     MatFormFieldModule,
@@ -50,6 +58,10 @@ import { FormsModule} from '@angular/forms';
     MatCheckboxModule,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule,
   ]
 })
 export class SharedModule { }

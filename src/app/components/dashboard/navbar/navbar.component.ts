@@ -13,12 +13,13 @@ export class NavbarComponent implements OnInit {
   constructor(private _menuService: MenuService) { }
 
   ngOnInit(): void {
-    this.cargarMenu();
+    this.cargarMenu();    
   }
 
   cargarMenu(){
     this._menuService.getmenu().subscribe(data=>{
       this.menu=data;
+      console.log(this.menu);
     });
   }
 }

@@ -10,5 +10,10 @@ body {
 }
 
 .container {
-  margin: 0 100px;
+  margin: 0 50px;
+}
+
+#nav__toolbar {
+  background-color: rgb(156, 13, 3);
+  color: #fff;
 }
