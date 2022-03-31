@@ -7,12 +7,12 @@ import { Usuario } from '../interfaces/usuario';
 export class UsuarioService {
 
   listUsuarios: Usuario[] = [
-    {user: '01', firstName: 'Omar', lastName: 'Robles', sex: 'Femenino'},
-    {user: '02', firstName: 'Omar', lastName: 'Loarte', sex: 'Femenino'},
-    {user: '03', firstName: 'Klever', lastName: 'Robles', sex: 'Femenino'},
-    {user: '04', firstName: 'Dilan', lastName: 'Blas', sex: 'Femenino'},
-    {user: '05', firstName: 'Omar', lastName: 'Robles', sex: 'Femenino'},
-    {user: '06', firstName: 'Tacuchi', lastName: 'Robles', sex: 'Femenino'},
+    {user: 'dblas@info.com', firstName: 'Dilan', lastName: 'Blas', sex: 'Male'},
+    {user: 'orobles@info.com', firstName: 'Omar', lastName: 'Robles', sex: 'Male'},
+    {user: 'jperez@info.com', firstName: 'Juan', lastName: 'Perez', sex: 'Male'},
+    {user: 'mrocca@info.com', firstName: 'Mario', lastName: 'Rocca', sex: 'Male'},
+    {user: 'acasillas@info.com', firstName: 'Ana', lastName: 'Casillas', sex: 'Female'},
+    {user: 'mvelasquez@info.com', firstName: 'Maria', lastName: 'Velasquez', sex: 'Female'},
   ];
 
   constructor() { }
@@ -23,5 +23,9 @@ export class UsuarioService {
 
   eliminarUsuario(index: number){
     this.listUsuarios.splice(index, 1);
+  }
+
+  agregarUsuario(user: Usuario){
+    this.listUsuarios.unshift(user);
   }
 }

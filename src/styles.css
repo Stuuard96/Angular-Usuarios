@@ -13,7 +13,7 @@ body {
   margin: 0 50px;
 }
 
-#nav__toolbar {
-  background-color: rgb(156, 13, 3);
-  color: #fff;
+.example-spacer {
+  flex: 1 1 auto;
 }
+
