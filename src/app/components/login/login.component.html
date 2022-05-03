@@ -7,26 +7,15 @@
     </div>
     <div class="body__form">
       <mat-form-field class="body__form--item" appearance="outline">
-        <mat-label>User</mat-label>
+        <mat-label>admin</mat-label>
         <input matInput type="text" autocomplete="off" formControlName="user" />
       </mat-form-field>
       <mat-form-field class="body__form--item" appearance="outline">
-        <mat-label class="label">Pass</mat-label>
-        <input
-          matInput
-          type="password"
-          autocomplete="off"
-          formControlName="password"
-        />
+        <mat-label class="label">123</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="password" />
       </mat-form-field>
-      <button
-        mat-raised-button
-        class="body__form--item"
-        type="submit"
-        [disabled]="form.invalid"
-        color="primary"
-        style="height: 50px"
-      >
+      <button mat-raised-button class="body__form--item" type="submit" [disabled]="form.invalid" color="primary"
+        style="height: 50px">
         Log In
       </button>
     </div>
